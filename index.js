@@ -24,6 +24,10 @@ for (i = 0; i = clientes.length; i++) {
     document.querySelector("/clientes[i]").innerHTML = `nombre: ${nombre}<br>apellido: ${apellido}<br>´;
 }*/
 
+const clientes = require('./routes/clientes');
+const ventas = require('./routes/ventas');
+//const registro = require('./routes/registro');
+
 const express = require('express');
 const app = express();
 const mongodb = require('mongodb');
@@ -32,3 +36,17 @@ app.listen(3001);
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+app.use('/clientes', clientes);
+app.use('/ventas', ventas);
+//app.use('/registro', registro);
+
+MongoClient.connect('mongodb://127.0.0.1:27017', function (err, client) {
+    if (err !== undefined) {
+        console.log(err);
+    } else {
+        app.locals.db = client.db('hotel');
+    }
+});
+
+

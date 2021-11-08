@@ -28,17 +28,17 @@ document.querySelector(".enviar").addEventListener("click", function (event) {
         } else {
             // Mandamos datos de registro para el cliente
             alert("SUCCESS");
-        /*fetch('/clientes', {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: body
-        }).then(function (response) {
-            return response.json()
-        }).then(function (res) {
-            console.log(res)
-        });
-    */}
+            fetch('/clientes', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: body
+            }).then(function (response) {
+                return response.json()
+            }).then(function (res) {
+                console.log(res)
+            });
+        }
     }
 })
