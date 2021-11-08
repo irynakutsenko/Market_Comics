@@ -24,6 +24,9 @@ for (i = 0; i = clientes.length; i++) {
     document.querySelector("/clientes[i]").innerHTML = `nombre: ${nombre}<br>apellido: ${apellido}<br>´;
 }*/
 
+// En la colección de clientes, crear un rango extra llamado "admin". El que tenga ese rango, mediante un if == true ->
+// -> podrá usar los poderes de admin. Sólo se puede crear tal rango desde la terminal para que sea seguro.
+
 const clientes = require('./routes/clientes');
 const ventas = require('./routes/ventas');
 //const registro = require('./routes/registro');
