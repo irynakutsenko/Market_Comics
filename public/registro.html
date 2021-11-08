@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form class="menuOwner" hidden>
+        <h1>Panel de control de base de datos de la página:</h1><br>
+        <button class="add">Buscar en la base de datos</button>
+        <button class="add">Añadir entrada</button>
+        <button class="edit">Modificar registro</button>
+        <button class="delete">Borrar entrada</button>
+    </form>
+
+    <form class="formRegistro" hidden>
+        <h1>Registro:</h1>
+        <input type="text" name="nombre" placeholder="Nombre de pila:">
+        <input type="text" name="apellido" placeholder="Primer apellido:" />
+        <input type="text" name="direccion" placeholder="Direccion:" />
+        <br>
+        <input type="number" name="cp" placeholder="Código Postal:" />
+        <input type="number" name="poblacion" placeholder="Población:" />
+        <input type="number" name="pais" placeholder="País:" />
+        <br>
+        <input type="text" name="email" placeholder="Email válido:" />
+        <input type="text" name="password" placeholder="Contraseña:" />
+        <input type="text" name="confirm" placeholder="Confirmar contraseña:" />
+        <br><br>
+        <button class="enviar">Enviar</button>
+        <br>
+        <div class="error"></div>
+        <!--<button class="edit">Modificar mesa</button>
+        <button class="remove">Eliminar mesa</button>-->
+        <br><a href="/clientes">Ver lista de clientes registrados:</a>
+    </form>
+    <script src="app.js"></script>
+</body>
+
+</html>
