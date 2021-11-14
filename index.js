@@ -29,6 +29,12 @@ for (i = 0; i = clientes.length; i++) {
 
 const clientes = require('./routes/clientes');
 const ventas = require('./routes/ventas');
+const registro = require('./routes/registro');
+const login = require('./routes/login');
+const cartas = require('./routes/cartas');
+const comics = require('./routes/comics');
+const juegos = require('./routes/juegos');
+const snacks = require('./routes/snacks');
 //const registro = require('./routes/registro');
 
 const express = require('express');
@@ -40,15 +46,21 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+app.use('/cartas', cartas);
+app.use('/comics', comics);
+app.use('/juegos', juegos);
 app.use('/clientes', clientes);
 app.use('/ventas', ventas);
+app.use('/registro', registro);
+app.use('/login', login);
+app.use('/snacks', snacks);
 //app.use('/registro', registro);
 
 MongoClient.connect('mongodb://127.0.0.1:27017', function (err, client) {
     if (err !== undefined) {
         console.log(err);
     } else {
-        app.locals.db = client.db('hotel');
+        app.locals.db = client.db('tienda');
     }
 });
 
